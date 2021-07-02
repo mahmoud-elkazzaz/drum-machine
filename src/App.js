@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { drumsArr, pianoArr } from './Sound';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Howl } from 'howler';
+import { Howl, Howler } from 'howler';
 
 function App() {
 
@@ -28,6 +28,7 @@ function App() {
       document.getElementById('volume').disabled = true
       document.getElementById('bankSwitch').disabled = true
       document.getElementById('note').innerHTML = null
+      Howler.stop()
     } else {
       document.getElementById('volume').disabled = false
       document.getElementById('bankSwitch').disabled = false
