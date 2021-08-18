@@ -50,12 +50,20 @@
   margin: 20px 0 20px 10px;
 }
 
+.switch-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
 .switch {
   position: relative;
   display: block;
   width: 60px;
   height: 34px;
-  margin-left: 97px;
+  // margin-left: 97px;
 }
 
 .switch input { 
@@ -108,13 +116,12 @@ input:checked + .slider::before {
 
 #noteWrapper {
   border: none !important;
-  width: 75%;
+  // width: 75%;
   height: 45px;
-  margin-left: 30px;
   padding-top: 5px;
   background-color: #8A8C3B;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 25px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -141,4 +148,40 @@ input:checked + .slider::before {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: Bold;
   font-size: 1.1em;
+}
+
+@media screen and (max-width: 850px) {
+  #display {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+  }
+
+  #drum-pad {
+    margin-top: 10;
+  }
+
+  #control {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 200px;
+    height: 50%;
+    margin-top: 10px;
+    grid-gap: 0;
+    grid-template-areas: 
+    'power bank'
+    'volume note';
+  }
+
+  #bank-switch {
+    grid-area: bank;
+  }
+
+  #noteWrapper {
+    grid-area: note;
+    height: auto;
+  }
+
+  #volume {
+    width: 50%
+  }
 }

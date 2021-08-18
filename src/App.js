@@ -100,8 +100,8 @@ function App() {
           <button onClick={(e) => fireOff(e)} id={8}>C</button>
         </div> 
         <div id="control">
-          <div>
-            <span className="labels">Power</span>
+          <div class="switch-control">
+            <div className="labels">Power</div>
             <label className="switch">
               <input type="checkbox" id="powerSwitch" checked={power} onChange={isChecked}/>
               <span className="slider round"></span>
@@ -111,7 +111,7 @@ function App() {
           <div className="slidecontainer">
             <input type="range" min="1" max="100" value={value} id="volume" onChange={(e) => setVolume(e)} />
           </div>
-          <div>
+          <div class="switch-control" id="bank-switch">
             <span className="labels">Bank</span>
             <label className="switch">
               <input type="checkbox" id="bankSwitch" onChange={beat}/>
